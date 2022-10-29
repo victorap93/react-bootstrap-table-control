@@ -38,7 +38,7 @@ export default () => {
 }
 ```
 
-You can see a interative component in <a href="https://main--635d1d685cdfb0210b43bf17.chromatic.com" target="_blank">Storybook</a>.
+You can see a interative component in [Storybook](https://main--635d1d685cdfb0210b43bf17.chromatic.com).
 
 ## Props
 

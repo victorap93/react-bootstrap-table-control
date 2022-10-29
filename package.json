@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -36,8 +36,25 @@
     "trailingComma": "es5"
   },
   "name": "react-bootstrap-table-control",
-  "author": "Victor Aparecido Barbato Rossi",
+  "description": "This component facilitates the control and display of tables.",
+  "author": {
+    "name": "Victor Aparecido Barbato Rossi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorap93/react-bootstrap-table-control.git"
+  },
+  "homepage": "https://github.com/victorap93",
   "module": "dist/react-bootstrap-table-control.esm.js",
+  "keywords": [
+    "react",
+    "react-bootstrap",
+    "bootstrap",
+    "table-control",
+    "table",
+    "control"
+  ],
+
   "size-limit": [
     {
       "path": "dist/react-bootstrap-table-control.cjs.production.min.js",
