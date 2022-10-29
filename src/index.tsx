@@ -110,6 +110,7 @@ export const TableControl = ({
                     return { min: 3, max: 8 }
                   })
                 }
+                tbodyProps={tbodyProps}
               />
           }
         </RBTable>

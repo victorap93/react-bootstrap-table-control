@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -87,8 +87,8 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "react-bootstrap-pagination-control": "^1.0.2",
-    "react-bootstrap-table-loading": "^1.1.0",
+    "react-bootstrap-pagination-control": "^1.0.5",
+    "react-bootstrap-table-loading": "^1.1.4",
     "react-icons": "^4.4.0"
   }
 }
