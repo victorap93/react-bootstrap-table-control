@@ -1,3 +1,9 @@
+## 1.1.1 (2022-10-31)
+
+### Bug Fixes
+
+* Display Element in `Item` value.
+
 ## 1.1.0 (2022-10-31)
 
 ### Feature

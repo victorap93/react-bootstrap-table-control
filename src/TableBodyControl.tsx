@@ -71,12 +71,14 @@ export const TableBodyControl = ({
                   }
                   {...(
                     typeof item_value[header_item.key] === 'object'
+                      && item_value[header_item.key]?.tdProps
                       ? item_value[header_item.key]?.tdProps
                       : {}
                   )}
                 >
                   {
                     typeof item_value[header_item.key] === 'object'
+                      && item_value[header_item.key].value
                       ? item_value[header_item.key].value
                       : item_value[header_item.key]
                   }
