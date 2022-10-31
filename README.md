@@ -67,6 +67,7 @@ You can see a interative component in [Storybook](https://main--635d1d685cdfb021
 | isLoading     | boolean                               | false                              | Loading status                                                                |
 | tableProps    | object                                | {}                                 | table properties                                                              |
 | theadProps    | object                                | {}                                 | thead properties                                                              |
+| trProps       | object                                | {}                                 | thead tr properties                                                           |
 | tbodyProps    | object                                | {}                                 | tbody properties                                                              |
 
 ## Types
@@ -80,19 +81,27 @@ You can see a interative component in [Storybook](https://main--635d1d685cdfb021
 
 ### Header
 
-| Name    | Type                  | Default | Description               |
-| ------- | --------------------- | ------- | ------------------------- |
-| name    | string                | -       | **Required**. Header name |
-| key     | string                | -       | **Required**. Key name    |
-| sort    | boolean               | -       | Sortable column           |
-| thProps | object                | -       | th properties             |
+| Name    | Type    | Default | Description               |
+| ------- | ------- | ------- | ------------------------- |
+| name    | string  | -       | **Required**. Header name |
+| key     | string  | -       | **Required**. Key name    |
+| sort    | boolean | -       | Sortable column           |
+| thProps | object  | -       | th properties             |
 
 ### Item
 
-| Name    | Type                                  | Default                                                                                                              | Description         |
-| ------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------- |
-| type    | "default" \| "blocked" \| "clickable" | When used into TableControl, this value is "default" if `clickable` is false, and "clickable" if `clickable` is true | Type of item action |
-| trProps | object                                | -                                                                                                                    | tr properties       |
+| Name          | Type                                  | Default                                                                                                              | Description                                 |
+| ------------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| trType        | "default" \| "blocked" \| "clickable" | When used into TableControl, this value is "default" if `clickable` is false, and "clickable" if `clickable` is true | Type of item action                         |
+| trProps       | object                                | -                                                                                                                    | tr properties                               |
+| [key: string] | any \| Td                             | -                                                                                                                    | Column value or Td type for a specific view |
+
+### Td
+
+| Name    | Type   | Default | Description                |
+| ------- | ------ | ------- | -------------------------- |
+| value   | any    | -       | **Required**. Column value |
+| tdProps | object | -       | td properties              |
 
 ## License
 MIT

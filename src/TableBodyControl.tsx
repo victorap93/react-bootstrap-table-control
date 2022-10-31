@@ -2,10 +2,16 @@ import React from 'react'
 
 import { Header } from './TableHeadControl'
 
+export type Td = {
+  value: any,
+  tdProps?: object
+}
+
 export type Item = any
   & {
-    type?: "default" | "blocked" | "clickable",
+    trType?: "default" | "blocked" | "clickable",
     trProps?: object
+    [key: string]: any | Td;
   }
 
 export type TableBodyControlProps = {
@@ -41,7 +47,7 @@ export const TableBodyControl = ({
               style={
                 clickable
                   ? (
-                    item_value.type === 'blocked'
+                    item_value.trType === 'blocked'
                       ? { cursor: 'not-allowed' }
                       : { cursor: 'pointer' }
                   )
@@ -49,22 +55,31 @@ export const TableBodyControl = ({
               }
               // Clickable action
               onClick={() => (
-                clickable && item_value.type !== 'blocked'
+                clickable && item_value.trType !== 'blocked'
                   ? onClickItem(item_value)
                   : false
               )}
-              {...(item_value?.trProps !== undefined ? item_value.trProps : {})}
+              {...(item_value?.trProps ? item_value.trProps : {})}
             >
               {header.map((header_item, header_index) => {
                 // Blocked style
                 return <td key={header_index}
                   style={
-                    item_value.type === 'blocked'
+                    item_value.trType === 'blocked'
                       ? { color: '#bbb' }
                       : {}
                   }
+                  {...(
+                    typeof item_value[header_item.key] === 'object'
+                      ? item_value[header_item.key]?.tdProps
+                      : {}
+                  )}
                 >
-                  {item_value[header_item.key]}
+                  {
+                    typeof item_value[header_item.key] === 'object'
+                      ? item_value[header_item.key].value
+                      : item_value[header_item.key]
+                  }
                 </td>
               })}
             </tr>

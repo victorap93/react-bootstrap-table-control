@@ -51,6 +51,7 @@ export const TableControl = ({
   isLoading = false,
   tableProps = {},
   theadProps = {},
+  trProps = {},
   tbodyProps = {}
 }: TableControlProps) => {
 
@@ -88,6 +89,7 @@ export const TableControl = ({
             onClickHeader={onClickHeader}
             sort={sort}
             theadProps={theadProps}
+            trProps={trProps}
           />
 
           {/* Table body */}

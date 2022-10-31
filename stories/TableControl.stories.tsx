@@ -48,7 +48,7 @@ const Template: Story<TableControlProps> = args => {
         id: number,
         name: "Name " + number,
         description: "Description " + number,
-        type: clickable && number % Math.ceil(real_total / (real_limit * 4)) === 0 ? 'blocked' : 'default'
+        trType: clickable && number % Math.ceil(real_total / (real_limit * 4)) === 0 ? 'blocked' : 'default'
       }
     })
   }

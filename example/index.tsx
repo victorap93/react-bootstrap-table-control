@@ -21,7 +21,16 @@ const App = () => {
               { key: "description", name: "Description" }
             ]}
             itens={[
-              { id: 1, name: "Name 1", description: "Description 1" },
+              {
+                id: {
+                  value: 1,
+                  tdProps: {
+                    style: { color: "red" }
+                  }
+                },
+                name: "Name 1",
+                description: "Description 1"
+              },
               { id: 2, name: "Name 2", description: "Description 2" },
               { id: 3, name: "Name 3", description: "Description 3" },
               { id: 4, name: "Name 4", description: "Description 4" },

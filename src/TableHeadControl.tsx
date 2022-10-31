@@ -11,7 +11,7 @@ export type Header = {
   name: string,
   key: string,
   sort?: boolean,
-  thProps?: object,
+  thProps?: object
 }
 
 export type TableHeadControlProps = {
@@ -22,6 +22,7 @@ export type TableHeadControlProps = {
   sort?: Sort,
   // Properties
   theadProps?: object,
+  trProps?: object,
 }
 
 export const TableHeadControl = ({
@@ -29,11 +30,12 @@ export const TableHeadControl = ({
   sortable = false,
   onClickHeader = sort => console.log(sort),
   sort = { column: 'id', direction: "ASC" },
-  theadProps = {}
+  theadProps = {},
+  trProps = {}
 }: TableHeadControlProps) => {
 
   return <thead {...theadProps}>
-    <tr>
+    <tr {...trProps}>
       {/* Map all th headers */}
       {header.map((header_item, header_index) => {
         return <th key={header_index}
@@ -53,7 +55,7 @@ export const TableHeadControl = ({
             !sortable || header_item.sort === false
               ? false
               : onClickHeader(
-                sort.column === header_item.key && sort?.direction !== undefined
+                sort.column === header_item.key && sort?.direction
                   ? { column: header_item.key, direction: sort.direction }
                   : { column: header_item.key }
               )
