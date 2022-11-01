@@ -25,6 +25,7 @@ export type TableControlProps = TableHeadControlProps
     onClickPage?: (page: number) => any,
     // Loading
     isLoading?: boolean,
+    loadingLines?: number,
     // Properties
     tableProps?: object
   }
@@ -49,6 +50,7 @@ export const TableControl = ({
   last = false,
   onClickPage = page => console.log(page),
   isLoading = false,
+  loadingLines = limit,
   tableProps = {},
   theadProps = {},
   trProps = {},
@@ -106,7 +108,7 @@ export const TableControl = ({
               />
               // Loading
               : <TableLoading
-                lines={limit}
+                lines={loadingLines}
                 columns={
                   header.map(() => {
                     return { min: 3, max: 8 }

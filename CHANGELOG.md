@@ -1,3 +1,9 @@
+## 1.2.0 (2022-11-01)
+
+### Feature
+
+* Created `loadingLines` propertie to specify the number of lines that will be displayed during loading.
+
 ## 1.1.1 (2022-10-31)
 
 ### Bug Fixes

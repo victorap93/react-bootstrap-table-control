@@ -65,6 +65,7 @@ You can see a interative component in [Storybook](https://main--635d1d685cdfb021
 | last          | boolean                               | false                              | Control if fist and last actions will be displayed                            |
 | onClickPage   | number => any                         | page => console.log(page)          | Pagination click function                                                     |
 | isLoading     | boolean                               | false                              | Loading status                                                                |
+| loadingLines  | number                                | `limit`                            | Number of lines that will be displayed during loading                         |
 | tableProps    | object                                | {}                                 | table properties                                                              |
 | theadProps    | object                                | {}                                 | thead properties                                                              |
 | trProps       | object                                | {}                                 | thead tr properties                                                           |
@@ -94,7 +95,7 @@ You can see a interative component in [Storybook](https://main--635d1d685cdfb021
 | ------------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
 | trType        | "default" \| "blocked" \| "clickable" | When used into TableControl, this value is "default" if `clickable` is false, and "clickable" if `clickable` is true | Type of item action                         |
 | trProps       | object                                | -                                                                                                                    | tr properties                               |
-| [key: string] | any \| Td                             | -                                                                                                                    | Column value or Td type for a specific view |
+| [key: string] | any \| `Td`                           | -                                                                                                                    | Column value or Td type for a specific view |
 
 ### Td
 
@@ -102,6 +103,10 @@ You can see a interative component in [Storybook](https://main--635d1d685cdfb021
 | ------- | ------ | ------- | -------------------------- |
 | value   | any    | -       | **Required**. Column value |
 | tdProps | object | -       | td properties              |
+
+## Changelog
+
+See full changelog in [GitHub](https://github.com/victorap93/react-bootstrap-table-control/blob/main/CHANGELOG.md).
 
 ## License
 MIT
