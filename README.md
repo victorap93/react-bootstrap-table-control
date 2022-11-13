@@ -44,32 +44,33 @@ You can see a interative component in [Storybook](https://main--635d1d685cdfb021
 
 ### TableControl
 
-| Name          | Type                                  | Default                            | Description                                                                   |
-| ------------- | ------------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------- |
-| header        | `Header[]`                            | -                                  | **Required**. List of header values                                           |
-| sortable      | boolean                               | false                              | Enable sort action                                                            |
-| onClickHeader | `Sort` => any                         | sort => console.log(sort)          | Header click function                                                         |
-| sort          | `Sort`                                | { column: 'id', direction: "ASC" } | Sort direction                                                                |
-| itens         | `Item[]`                              | -                                  | **Required**. List of itens displayed in table                                |
-| emptyMessage  | JSX.Element \| string                 | "No results"                       | Message displayed when items equals zero                                      |
-| clikcable     | boolean                               | false                              | Show clickable action                                                         |
-| onClickItem   | `Item` => any                         | item => console.log(item)          | Item click function                                                           |
-| total         | number                                | 0                                  | Total of itens                                                                |
-| totalPosition | "both" \| "top" \| "bottom" \| "none" | "both"                             | Total itens number                                                            |
-| pagination    | boolean                               | true                               | Show pagination                                                               |
-| page          | number                                | 1                                  | Active page                                                                   |
-| limit         | number                                | 25                                 | Max itens per page, it's minimum value is `itens` length                      |
-| between       | number                                | 4                                  | Max itens in left and right when `page` is in center, it's minimum value is 1 |
-| ellipsis      | number                                | 1                                  | Number itens after ellipsis, its maximum value is equal (`between` - 2)       |
-| next          | boolean                               | true                               | Control if prev and next actions will be displayed                            |
-| last          | boolean                               | false                              | Control if fist and last actions will be displayed                            |
-| onClickPage   | number => any                         | page => console.log(page)          | Pagination click function                                                     |
-| isLoading     | boolean                               | false                              | Loading status                                                                |
-| loadingLines  | number                                | `limit`                            | Number of lines that will be displayed during loading                         |
-| tableProps    | object                                | {}                                 | table properties                                                              |
-| theadProps    | object                                | {}                                 | thead properties                                                              |
-| trProps       | object                                | {}                                 | thead tr properties                                                           |
-| tbodyProps    | object                                | {}                                 | tbody properties                                                              |
+| Name            | Type                                  | Default                            | Description                                                                   |
+| --------------- | ------------------------------------- | ---------------------------------- | ----------------------------------------------------------------------------- |
+| header          | `Header[]`                            | -                                  | **Required**. List of header values                                           |
+| sortable        | boolean                               | false                              | Enable sort action                                                            |
+| onClickHeader   | `Sort` => any                         | sort => console.log(sort)          | Header click function                                                         |
+| sort            | `Sort`                                | { column: 'id', direction: "ASC" } | Sort direction                                                                |
+| itens           | `Item[]`                              | -                                  | **Required**. List of itens displayed in table                                |
+| emptyMessage    | JSX.Element \| string                 | "No results"                       | Message displayed when items equals zero                                      |
+| clikcable       | boolean                               | false                              | Show clickable action                                                         |
+| onClickItem     | `Item` => any                         | item => console.log(item)          | Item click function                                                           |
+| fillEmptyColumn | boolean                               | true                               | Create empty td if item is undefined                                          |
+| total           | number                                | 0                                  | Total of itens                                                                |
+| totalPosition   | "both" \| "top" \| "bottom" \| "none" | "both"                             | Total itens number                                                            |
+| pagination      | boolean                               | true                               | Show pagination                                                               |
+| page            | number                                | 1                                  | Active page                                                                   |
+| limit           | number                                | 25                                 | Max itens per page, it's minimum value is `itens` length                      |
+| between         | number                                | 4                                  | Max itens in left and right when `page` is in center, it's minimum value is 1 |
+| ellipsis        | number                                | 1                                  | Number itens after ellipsis, its maximum value is equal (`between` - 2)       |
+| next            | boolean                               | true                               | Control if prev and next actions will be displayed                            |
+| last            | boolean                               | false                              | Control if fist and last actions will be displayed                            |
+| onClickPage     | number => any                         | page => console.log(page)          | Pagination click function                                                     |
+| isLoading       | boolean                               | false                              | Loading status                                                                |
+| loadingLines    | number                                | `limit`                            | Number of lines that will be displayed during loading                         |
+| tableProps      | object                                | {}                                 | table properties                                                              |
+| theadProps      | object                                | {}                                 | thead properties                                                              |
+| trProps         | object                                | {}                                 | thead tr properties                                                           |
+| tbodyProps      | object                                | {}                                 | tbody properties                                                              |
 
 ## Types
 
@@ -82,12 +83,12 @@ You can see a interative component in [Storybook](https://main--635d1d685cdfb021
 
 ### Header
 
-| Name    | Type    | Default | Description               |
-| ------- | ------- | ------- | ------------------------- |
-| name    | string  | -       | **Required**. Header name |
-| key     | string  | -       | **Required**. Key name    |
-| sort    | boolean | -       | Sortable column           |
-| thProps | object  | -       | th properties             |
+| Name    | Type                  | Default | Description               |
+| ------- | --------------------- | ------- | ------------------------- |
+| name    | JSX.Element \| string | -       | **Required**. Header name |
+| key     | string                | -       | **Required**. Key name    |
+| sort    | boolean               | -       | Sortable column           |
+| thProps | object                | -       | th properties             |
 
 ### Item
 

@@ -39,6 +39,7 @@ export const TableControl = ({
   emptyMessage = "No results",
   clickable = false,
   onClickItem = item => console.log(item),
+  fillEmptyColumn = true,
   total = 0,
   totalPosition = "both",
   pagination = true,
@@ -104,6 +105,7 @@ export const TableControl = ({
                 emptyMessage={emptyMessage}
                 clickable={clickable}
                 onClickItem={onClickItem}
+                fillEmptyColumn={fillEmptyColumn}
                 tbodyProps={tbodyProps}
               />
               // Loading

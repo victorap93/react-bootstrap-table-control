@@ -11,7 +11,7 @@ export type Item = any
   & {
     trType?: "default" | "blocked" | "clickable",
     trProps?: object
-    [key: string]: any | Td;
+    [key: string]: Td | any;
   }
 
 export type TableBodyControlProps = {
@@ -22,6 +22,7 @@ export type TableBodyControlProps = {
   emptyMessage?: JSX.Element | string,
   clickable?: boolean,
   onClickItem?: (item: Item) => any,
+  fillEmptyColumn?: boolean,
   // Properties
   tbodyProps?: object,
 }
@@ -32,6 +33,7 @@ export const TableBodyControl = ({
   emptyMessage = "No results",
   clickable = false,
   onClickItem = item => console.log(item),
+  fillEmptyColumn = true,
   tbodyProps = {}
 }: TableBodyControlProps) => {
 
@@ -63,26 +65,26 @@ export const TableBodyControl = ({
             >
               {header.map((header_item, header_index) => {
                 // Blocked style
-                return <td key={header_index}
-                  style={
-                    item_value.trType === 'blocked'
-                      ? { color: '#bbb' }
-                      : {}
-                  }
-                  {...(
-                    typeof item_value[header_item.key] === 'object'
-                      && item_value[header_item.key]?.tdProps
-                      ? item_value[header_item.key]?.tdProps
-                      : {}
-                  )}
-                >
-                  {
-                    typeof item_value[header_item.key] === 'object'
-                      && item_value[header_item.key].value
-                      ? item_value[header_item.key].value
-                      : item_value[header_item.key]
-                  }
-                </td>
+                return fillEmptyColumn || item_value[header_item.key]
+                  ? <td key={header_index}
+                    style={
+                      item_value.trType === 'blocked'
+                        ? { color: '#bbb' }
+                        : {}
+                    }
+                    {...(
+                      typeof item_value[header_item.key] === 'object' && item_value[header_item.key]?.tdProps
+                        ? item_value[header_item.key]?.tdProps
+                        : {}
+                    )}
+                  >
+                    {
+                      typeof item_value[header_item.key] === 'object' && item_value[header_item.key].value
+                        ? item_value[header_item.key].value
+                        : item_value[header_item.key]
+                    }
+                  </td>
+                  : null
               })}
             </tr>
           })

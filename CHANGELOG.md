@@ -1,8 +1,15 @@
+## 1.3.0 (2022-11-13)
+
+### Feature
+
+* Created `fillEmptyColumn` property to specify if it is needed to create a empty td when item is undefined.
+* Changed `name` property to accept `Elements` in addition to `string` in `Header`.
+
 ## 1.2.0 (2022-11-01)
 
 ### Feature
 
-* Created `loadingLines` propertie to specify the number of lines that will be displayed during loading.
+* Created `loadingLines` property to specify the number of lines that will be displayed during loading.
 
 ## 1.1.1 (2022-10-31)
 
@@ -18,7 +25,7 @@
 
 ### BREAKING CHANGES
 
-* Changed `type` propertie name to `trType` in `Item` type.
+* Changed `type` property name to `trType` in `Item` type.
 
 ## 1.0.2 (2022-10-29)
 

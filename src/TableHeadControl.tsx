@@ -8,7 +8,7 @@ export type Sort = {
 }
 
 export type Header = {
-  name: string,
+  name: JSX.Element | string,
   key: string,
   sort?: boolean,
   thProps?: object
